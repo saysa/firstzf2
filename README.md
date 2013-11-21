@@ -75,3 +75,19 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+
+    ### personal VirtualHost
+    <VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "c:/wamp/www/firstzf2/public"
+    ServerName zf2.local
+    ErrorLog "logs/zf2.local-error.log"
+    CustomLog "logs/zf2.local-access.log" common
+    SetEnv APPLICATION_ENV "development"
+    <Directory /firstzf2/public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+    </VirtualHost>
