@@ -8,6 +8,11 @@ class IndexController extends AbstractActionController
 {
 	public function indexAction()
 	{
-		
+		$hw = 'Hello World !';
+		return new ViewModel(
+			array(
+				'HelloWorld' => $hw,
+			)	
+		);
 	}
 }
