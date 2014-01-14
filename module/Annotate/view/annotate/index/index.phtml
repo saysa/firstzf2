@@ -2,4 +2,11 @@
 
 echo $HelloWorld;
 
+$form = $this->contactForm;
+echo $this->form()->openTag($form);
+echo $this->formRow($form->get('userName'));
+echo $this->formRow($form->get('userLastName'));
+echo $this->formElement($form->get('submit'));
+echo $this->form()->closeTag($form);
+
 ?>
