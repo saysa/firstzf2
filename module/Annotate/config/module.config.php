@@ -20,12 +20,23 @@ return array(
 					),
 				), 
 			),
+			'display' => array(
+				'type' => 'Zend\Mvc\Router\Http\Literal',
+				'options' => array(
+					'route' => '/display',
+					'defaults' => array(
+						'controller' => 'DisplayAnnotate',
+						'action' 	 => 'display',
+					),
+				),				
+			),
 		),
 	),
 	
 	'controllers' => array(
 		'invokables' => array(
 			'IndexController' => 'Annotate\Controller\IndexController',
+			'DisplayAnnotate' => 'Annotate\Controller\DisplayController',
 		),				
 	),
 		
