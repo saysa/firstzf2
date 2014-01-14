@@ -22,4 +22,10 @@ return array(
 			),
 		),
 	),
+	
+	'controllers' => array(
+		'invokables' => array(
+			'IndexController' => 'Annotate\Controller\IndexController',
+		),				
+	),
 );
