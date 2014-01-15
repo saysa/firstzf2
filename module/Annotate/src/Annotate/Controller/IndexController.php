@@ -12,8 +12,26 @@ use Annotate\Model\Contact;
 
 class IndexController extends AbstractActionController
 {
+	protected $contactTable;
+	protected $noteTable;
+	
+	public function getContactTable()
+	{
+		if (!$this->contactTable) 
+		{
+			$sm = $this->getServiceLocator();
+			$this->contactTable = $sm->get('ContactTable');
+		}
+		
+		return $this->contactTable;
+	}
+	
 	public function indexAction()
 	{
+		
+		$contacts = $this->getContactTable()->fetchAll();
+		$contacts->buffer();
+		
 		
 		// Service Manager
 		$sm = $this->getServiceLocator();
@@ -105,6 +123,11 @@ class IndexController extends AbstractActionController
 			echo '<br />-----<br />';
 		}
 		
+		$tableGateway_contact = $sm->get('ContactTable');
+		$tableGateway_note = $sm->get('NoteTable');
+		
+		
+		
 		$hw = 'Hello World !';
 		
 		$contactForm = new ContactForm();
@@ -113,6 +136,7 @@ class IndexController extends AbstractActionController
 			array(
 				'HelloWorld' => $hw,
 				'contactForm' => $contactForm,
+				'contacts' => $contacts,
 			)	
 		);
 	}
