@@ -66,10 +66,10 @@ class IndexController extends AbstractActionController
 		$resultSet->initialize($results);
 		$resultSet->buffer();
 		
-		foreach ($resultSet as $result)
+		/*foreach ($resultSet as $result)
 		{
 			var_dump($result);
-		}
+		}*/
 		
 		/**
 		 * Method 2 : Sql with Jointure

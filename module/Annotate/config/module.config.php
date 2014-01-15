@@ -45,5 +45,18 @@ return array(
 		'template_path_stack' => array(
 			'annotate' => __DIR__ . '/../view',
 		),		
+		'display_not_found_reason' => true,
+		'display_exceptions' => true,
+		'doctype' => 'HTML5',
+		'base_path' => 'http://zf2.local',
+		'layout' => 'layoutAnnotate',
+		'not_found_template' => '404Annotate',
+		'exception_template' => 'myError',
+		
+		'template_map' => array(
+			'layoutAnnotate' => __DIR__ . '/../view/layout/myLayout.phtml',
+			'404Annotate' => __DIR__ . '/../view/error/my404.phtml',
+			'myError' => __DIR__ . '/../view/error/myError.phtml',
+		),
 	),
 );
