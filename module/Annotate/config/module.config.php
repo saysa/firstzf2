@@ -20,6 +20,16 @@ return array(
 					),
 				), 
 			),
+			'otherLayout' => array(
+				'type' => 'Zend\Mvc\Router\Http\Literal',
+				'options' => array(
+						'route' => '/otherlayout',
+						'defaults' => array(
+								'controller' => 'IndexController',
+								'action'	 => 'otherlayout',
+						),
+				),
+			),
 			'display' => array(
 				'type' => 'Zend\Mvc\Router\Http\Literal',
 				'options' => array(
@@ -57,6 +67,7 @@ return array(
 			'layoutAnnotate' => __DIR__ . '/../view/layout/myLayout.phtml',
 			'404Annotate' => __DIR__ . '/../view/error/my404.phtml',
 			'myError' => __DIR__ . '/../view/error/myError.phtml',
+			'myNewLayout' => __DIR__ . '/../view/layout/myNewLayout.phtml',
 		),
 	),
 );

@@ -49,9 +49,11 @@ class IndexController extends AbstractActionController
 		
 		foreach ($resultSet as $result)
 		{
+			/*
 			echo $result->id . '<br />';
 			echo $result->userName . '<br />';
 			echo $result->userLastName . '<br />';
+			*/
 		}
 		
 		/**
@@ -89,7 +91,7 @@ class IndexController extends AbstractActionController
 				't1.id <> 2',
 			));
 			
-		echo $sql->getSqlStringForSqlObject($select);
+		/////////////echo $sql->getSqlStringForSqlObject($select);
 		$requete = $sql->prepareStatementForSqlObject($select);
 		$results = $requete->execute();
 		$resultSet = new ResultSet();
@@ -98,9 +100,11 @@ class IndexController extends AbstractActionController
 		
 		foreach ($resultSet as $result)
 		{
+			/*
 			echo 'id : ' . $result->id . '<br />';
 			echo 'id_contact : ' . $result->id_contact . ' Nom : ' . $result->userLastName . '<br />';
 			echo 'note : ' . $result->note . '<br />';
+			*/
 		}
 		
 		/**
@@ -116,11 +120,13 @@ class IndexController extends AbstractActionController
 		
 		foreach ($resultSet as $contact)
 		{
+			/*
 			echo '<br />-----<br />';
 			echo $contact->id;
-			//echo $contact->userName;
+			/////echo $contact->userName;
 			echo $contact->userLastName;
 			echo '<br />-----<br />';
+			*/
 		}
 		
 		$tableGateway_contact = $sm->get('ContactTable');
@@ -139,5 +145,21 @@ class IndexController extends AbstractActionController
 				'contacts' => $contacts,
 			)	
 		);
+	}
+	
+	public function otherlayoutAction()
+	{
+		//$maView = new ViewModel();
+		//$maView->setTemplate('myNewLayout');
+		//$maView->setTerminal(true);
+		//return $maView;
+		
+		
+		$maView = new ViewModel();
+		$maView2 = new ViewModel();
+		$maView2->setTemplate('myNewLayout');
+		$maView->addChild($maView2);
+		$maView->setTerminal(true);
+		
 	}
 }
